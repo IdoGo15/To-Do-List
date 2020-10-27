@@ -70,6 +70,12 @@ function removeTask(e) {
       }
       var li = e.target.parentElement;
       tasklist.removeChild(li);
+      
+      if (acomplisheCount === 0 && completedCount === 0) {
+        acomplisheClass.textContent = ' ';
+        complitedClass.textContent = ' ';
+      }
+ 
       if (completedCount === 0 && acomplisheCount === 0) {
         clearButton.style.display = 'none';
       }
