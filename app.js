@@ -1,11 +1,16 @@
+var clearButton = document.getElementById('clearButton');
 var addInput = document.getElementById('submit-new');
 var tasklist = document.getElementById('list');
+let clrbtn = false;
 
 // Add new task
 addInput.addEventListener('click', addTask);
 
 // Remove task
 tasklist.addEventListener('click', removeTask);
+
+// Clear tasks
+clearButton.addEventListener('click', clearTasks);
 
 // Add task
 function addTask (e) {  
@@ -20,6 +25,15 @@ function addTask (e) {
   li.appendChild(dltbtn);
   li.appendChild(cmplt);
   tasklist.appendChild(li);
+
+  //Create clear button if not Exists
+  if (clrbtn === false) {
+    clrbtn = true;
+    var clearbtn = document.createElement('button');
+    clearbtn.className = 'btn btn-md text-success border-success rounded';
+    clearbtn.appendChild(document.createTextNode('Clear Items'));
+    clearButton.appendChild(clearbtn);
+  }
 }
 
 // Remove task
@@ -31,4 +45,14 @@ function removeTask(e) {
     }
   }
 }
+
+// Clear tasks
+function clearTasks(e) {
+  if(confirm('Are You Sure ?')) {
+    location.reload();
+  }
+}
+
+
+
 
