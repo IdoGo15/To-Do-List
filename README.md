@@ -1,6 +1,6 @@
 # To-Do-List
 
-![UC-51a7681f-2efd-48a4-b399-33e663b767f1](https://user-images.githubusercontent.com/72794422/97434397-a0f8a200-1927-11eb-84b1-64342bcc1cac.jpg)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/72794422/97434615-f0d76900-1927-11eb-8498-094e54b3705d.gif)
 
 
 ## Technologies
