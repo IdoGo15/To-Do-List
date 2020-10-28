@@ -6,6 +6,11 @@ const complitedClass = document.querySelector('.complited');
 let clrbtn = false;
 let acomplisheCount = 0;
 let completedCount = 0;
+let tasksArray = new Array();
+let arrayCount = 0;
+
+
+
 
 // Add new task
 addInput.addEventListener('click', addTask);
@@ -38,7 +43,7 @@ function addTask (e) {
     li.appendChild(dltbtn);
     li.appendChild(cmplt);
     tasklist.appendChild(li);
-
+    
     // Clear input
     document.getElementById('task').value = '';
 
@@ -56,17 +61,18 @@ function addTask (e) {
       clearbtn.appendChild(document.createTextNode('Clear Items'));
       clearButton.appendChild(clearbtn);
     }
+}
   }
-  }
+  
 
 // Remove task || Updating Complited and Acomplishe
 function removeTask(e) {
   if(e.target.classList.contains('delete')) {
-    if(confirm('Are You Sure ?')){
-      if (e.target.parentElement.classList.contains('done')) {
-        completedCount -= 1;
-        complitedClass.textContent = ' ' + completedCount;
-      } else {
+    if (e.target.parentElement.classList.contains('done')) {
+      completedCount -= 1;
+      complitedClass.textContent = ' ' + completedCount;
+    }
+    else if(confirm('Are You Sure ?')){
         acomplisheCount -=1;
         acomplisheClass.textContent = ' ' + acomplisheCount;
       }
@@ -83,8 +89,9 @@ function removeTask(e) {
       }
     }
   }
-}
 
+
+// Updating Completed & Acomplishe
 function completedAcomplishe (e) {
   if (e.target.classList.contains('completed')) {
     if (e.target.parentElement.classList.contains('done')){
@@ -113,7 +120,4 @@ function clearTasks(e) {
     location.reload();
   }
 }
-
-
-
 
